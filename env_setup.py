@@ -119,17 +119,18 @@ def create_vector_store():
     print("Vector Store source set to: ", VECTOR_STORE)
 
     # Create PostgreSQL Instance is data source is different from PostgreSQL Instance
-    if VECTOR_STORE == 'cloudsql-pgvector' :
-        print("Generating pg dataset for vector store.")
-        # Parameters for PostgreSQL Instance
-        pg_region = DATASET_REGION
-        pg_instance = "pg15-opendataqna"
-        pg_database = "opendataqna-db"
-        pg_user = "pguser"
-        pg_password = "pg123"
-        pg_schema = 'pg-vector-store' 
+    # MG we don't use pgvector.
+    # if VECTOR_STORE == 'cloudsql-pgvector' :
+    #     print("Generating pg dataset for vector store.")
+    #     # Parameters for PostgreSQL Instance
+    #     pg_region = DATASET_REGION
+    #     pg_instance = "pg15-opendataqna"
+    #     pg_database = "opendataqna-db"
+    #     pg_user = "pguser"
+    #     pg_password = "pg123"
+    #     pg_schema = 'pg-vector-store' 
 
-        setup_postgresql(pg_instance, pg_region, pg_database, pg_user, pg_password)
+    #     setup_postgresql(pg_instance, pg_region, pg_database, pg_user, pg_password)
 
 
     # Create a new data set on Bigquery to use for the logs table

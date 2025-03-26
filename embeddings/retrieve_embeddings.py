@@ -16,6 +16,7 @@ def get_embedding_chunked(textinput, batch_size):
         request = [x["content"] for x in textinput[i : i + batch_size]]
         response = embedder.create(request) # Vertex Textmodel Embedder 
 
+        # print(f"response in get_embedding_chunked: {response}")
         # Store the retrieved vector embeddings for each chunk back.
         for x, e in zip(textinput[i : i + batch_size], response):
             x["embedding"] = e
@@ -62,6 +63,7 @@ def retrieve_embeddings(SOURCE, SCHEMA="public", table_names = None):
             curr_col_names = str(row_aug['table_columns'])
             curr_tbl_desc = str(row_aug['table_description'])
 
+            # print(f"cur_table_name: {cur_table_name}")
 
             table_detailed_description=f"""
             Table Name: {cur_table_name} |

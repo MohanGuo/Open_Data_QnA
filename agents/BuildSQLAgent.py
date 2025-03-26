@@ -53,28 +53,30 @@ class BuildSQLAgent(Agent, ABC):
                                        columns_schema = columns_schema)
 
         # print(f"Prompt to Build SQL: \n{context_prompt}") 
-
+        # print(f"Debugging 3!")
             
         # Chat history Retrieval
 
         chat_history=[]
-        for entry in session_history:
-            
-            timestamp = entry["timestamp"]
-            timestamp_str = timestamp.isoformat(timespec='auto')
+        # Debug
+        if session_history is not None:
+            for entry in session_history:
+                
+                timestamp = entry["timestamp"]
+                timestamp_str = timestamp.isoformat(timespec='auto')
 
-            user_message = Content(
-                parts=[Part.from_text(entry["user_question"])],  
-                role="user"
-            )
+                user_message = Content(
+                    parts=[Part.from_text(entry["user_question"])],  
+                    role="user"
+                )
 
-            bot_message = Content(
-                parts=[Part.from_text(entry["bot_response"])],
-                role="assistant"
-            )
-            chat_history.extend([user_message, bot_message])  # Add both to the history
+                bot_message = Content(
+                    parts=[Part.from_text(entry["bot_response"])],
+                    role="assistant"
+                )
+                chat_history.extend([user_message, bot_message])  # Add both to the history
         
-
+        # print(f"Debugging 4!")
         # print("Chat History Retrieved")
 
         if self.model_id == 'codechat-bison-32k':
@@ -93,7 +95,7 @@ class BuildSQLAgent(Agent, ABC):
         else:
             raise ValueError('Invalid Model Specified')
         
-
+        # print(f"Debugging 5!")
         if session_history is None or not session_history:
             concated_questions = None
             re_written_qe = None
@@ -104,7 +106,7 @@ class BuildSQLAgent(Agent, ABC):
             concated_questions,re_written_qe=self.rewrite_question(user_question,session_history)
             previous_question, previous_sql = self.get_last_sql(session_history)
 
-
+        # print(f"Debugging 6!")
         build_context_prompt=f"""
 
         Below is the previous user question from this conversation and its generated sql. 
@@ -122,14 +124,15 @@ class BuildSQLAgent(Agent, ABC):
 
         # print("BUILD CONTEXT ::: "+str(build_context_prompt))
 
-
+        # print(f"Debugging 7!")
         with telemetry.tool_context_manager('opendataqna-buildsql-v2'):
 
             response = chat_session.send_message(build_context_prompt, stream=False)
             generated_sql = (str(response.text)).replace("```sql", "").replace("```", "")
 
+        # print(f"Debugging 8!")
         generated_sql = (str(response.text)).replace("```sql", "").replace("```", "")
-        # print(generated_sql)
+        print(f"Generated SQL: \n{generated_sql}")
         return generated_sql
 
     def rewrite_question(self,question,session_history):

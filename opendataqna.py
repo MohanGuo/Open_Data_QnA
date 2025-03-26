@@ -266,9 +266,10 @@ async def generate_sql(session_id,
             
             # If similar table and column schemas found: 
             if len(table_matches.replace('Schema(values):','').replace(' ','')) > 0 or len(column_matches.replace('Column name(type):','').replace(' ','')) > 0 :
-
+                # print(f"Debugging 1!")
                 # GENERATE SQL
                 process_step = "\n\nBuild SQL: "
+                # print(f"Debugging 2!")
                 generated_sql = SQLBuilder.build_sql(DATA_SOURCE,user_grouping,user_question,session_history,table_matches,column_matches,similar_sql)
                 final_sql=generated_sql
                 AUDIT_TEXT = AUDIT_TEXT + process_step +  "\nGenerated SQL : " + str(generated_sql)

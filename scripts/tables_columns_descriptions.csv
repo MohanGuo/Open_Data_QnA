@@ -1,9 +1,51 @@
 TableName,ColumnName,TableDescription,ColumnDescription
-Table_1,Col11,Table_1_DESC,Col11_DESC
-Table_1,Col12,,Col12_DESC
-Table_1,Col13,,Col13_DESC
-Table_1,Col14,,Col14_DESC
-,,,
-Table_2,Col21,Table_2_DESC,Col21_DESC
-Table_2,Col22,,Col22_DESC
-Table_2,Col23,,Col31_DESC
+data_test,Publisher_Service_Descrip__c,Campaign data table,Salesforce custom field for publisher service description
+data_test,Audience,Campaign data table,Target audience for the campaign
+data_test,Remarks,Campaign data table,Additional notes or comments
+data_test,Start_date,Campaign data table,Campaign start date
+data_test,End_date,Campaign data table,Campaign end date
+data_test,Media_Budget,Campaign data table,Budget allocated for media
+data_test,Cost_To_Client,Campaign data table,Total cost charged to the client
+data_test,Pricing_Model__c,Campaign data table,Salesforce custom field for pricing model
+data_test,Planned_Unit_Price__c,Campaign data table,Salesforce custom field for planned unit price
+data_test,Netto_Price_per_unit__c,Campaign data table,Salesforce custom field for net price per unit
+data_test,Planned_Unit_Quantity__c,Campaign data table,Salesforce custom field for planned unit quantity
+data_test,Delivered_Unit_Quantity,Campaign data table,Actual delivered unit quantity
+data_test,Domain_Objective__c,Campaign data table,Salesforce custom field for domain objective
+data_test,source,Campaign data table,Source identifier of the campaign data
+data_test,fallback_config,Campaign data table,Fallback configuration identifier
+data_test,c_number,Campaign data table,Campaign number identifier
+data_test,ds_number,Campaign data table,Dataset number identifier
+data_test,SF_ID,Campaign data table,Salesforce record ID
+data_test,date,Campaign data table,Campaign date
+data_test,KPI__c,Campaign data table,Salesforce custom field for KPI metrics
+data_test,Planned_KPI__c,Campaign data table,Salesforce custom field for planned KPI metrics
+data_test,Planned_Clicks_Open__c,Campaign data table,Salesforce custom field for planned open clicks
+data_test,Planned_Impressions_Open__c,Campaign data table,Salesforce custom field for planned open impressions
+data_test,Planned_Views_Open__c,Campaign data table,Salesforce custom field for planned open views
+data_test,Planned_Completed_Views_Open__c,Campaign data table,Salesforce custom field for planned completed open views
+data_test,Planned_Engagements_Open__c,Campaign data table,Salesforce custom field for planned open engagements
+data_test,Planned_Leads_Open__c,Campaign data table,Salesforce custom field for planned open leads
+data_test,clicks,Campaign data table,Number of clicks received
+data_test,impressions,Campaign data table,Number of impressions received
+data_test,views,Campaign data table,Number of views received
+data_test,completedviews,Campaign data table,Number of completed views
+data_test,engagements,Campaign data table,Number of engagements
+data_test,conversiontype,Campaign data table,Type of conversion
+data_test,leads,Campaign data table,Number of leads generated
+data_test,hardconversions,Campaign data table,Number of hard conversions
+data_test,softconversions,Campaign data table,Number of soft conversions
+data_test,costs,Campaign data table,Total costs
+data_test,costs_ctc,Campaign data table,Cost to client
+data_test,adserver_impressions,Campaign data table,Number of impressions from ad server
+data_test,adserver_clicks,Campaign data table,Number of clicks from ad server
+data_test,Planned_Ad_Serving_Costs__c,Campaign data table,Salesforce custom field for planned ad serving costs
+data_test,AdServing_Model__c,Campaign data table,Salesforce custom field for ad serving model
+data_test,Ad_Serving_Costs,Campaign data table,Actual ad serving costs
+data_test,Data_Fee_Amount__c,Campaign data table,Salesforce custom field for data fee amount
+data_test,Data_Costs,Campaign data table,Actual data costs
+data_test,Channel_factory_Amount__c,Campaign data table,Salesforce custom field for channel factory amount
+data_test,General_Fee_amount__c,Campaign data table,Salesforce custom field for general fee amount
+data_test,Technical_Fee_amount__c,Campaign data table,Salesforce custom field for technical fee amount
+data_test,Manpower_Fee_amount__c,Campaign data table,Salesforce custom field for manpower fee amount
+data_test,Cost_To_Client_Actual,Campaign data table,Actual total cost charged to client
